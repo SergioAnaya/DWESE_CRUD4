@@ -1,0 +1,117 @@
+.container {
+    background-color: #fff;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    width: 27vw;
+    margin-top: 20vh;
+}
+
+.container-table a:link, .container-table a:visited {
+    color: #8d4fff;
+}
+
+.container-table a:hover {
+    color: #6e1dff;
+}
+
+.container .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1em;
+}
+
+.form .title {
+    font-size: 1.8em;
+    color: #8d4fff;
+    margin-bottom: 2vh;
+}
+
+.input-field label {
+    color: #9e9e9e!important;
+}
+
+.input-field input:focus + label {
+    color: #8d4fff!important;
+}
+
+.input-field input:focus {
+    border-bottom: 1px solid #8d4fff!important;
+    box-shadow: 0 1px 0 0 #8d4fff!important;
+}
+
+.input-field input.valid {
+    border-bottom: 1px solid #8d4fff!important;
+    box-shadow: 0 1px 0 0 #8d4fff!important;
+}
+
+.input-field input.invalid {
+    border-bottom: 1px solid red;
+    box-shadow: 0 1px 0 0 red;
+}
+
+.input-field i.material-icons {
+    color: #9e9e9e!important;
+}
+
+.input-field i.material-icons.active {
+    color: #8d4fff!important;
+}
+
+.form .btn {
+    background-color: #9e9e9e!important;
+}
+
+.waves-effect.waves-custom-purple .waves-ripple{
+    background-color: #8d4fff!important;
+}
+
+span.message {
+    color: #8d4fff;
+}
+
+.nav-wrapper {
+    background-color: #8d4fff!important;
+}
+
+[type="checkbox"]:checked+span:not(.lever):before {
+    border-right: 2px solid #8d4fff!important;
+    border-bottom: 2px solid #8d4fff!important;
+}
+
+.container-books, .container-users, .container-loans{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vh;
+}
+
+.container-table table {
+    width: 50vw;
+}
+
+.container-table table .header {
+    color: #8d4fff;
+}
+
+.message-container {
+    margin-top: 5vh;
+}
+
+.message-container, .delete-message-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.delete-message-container .btn {
+    margin-top: 5vh;
+}
+
+.forbidden-message {
+    font-size: 2em;
+    color: #8d4fff;
+    margin-bottom: 4vh;
+    padding: 4vh 3vw;
+}
