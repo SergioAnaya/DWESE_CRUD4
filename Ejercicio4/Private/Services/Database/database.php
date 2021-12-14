@@ -3,8 +3,8 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/class//DesWebEnEntSer/1Trim/EjerciciosCRUD/Ejercicio4/Private/Config/config.php';
 global $config;
 
-require_once(realpath(dirname(__FILE__) . '/../../../../DBConn.php'));
-//require_once $config['db_connection'];
+//require_once(realpath(dirname(__FILE__) . '/../../../../DBConn.php'));
+require_once $config['paths']['db_connection'];
 
 class Database {
 

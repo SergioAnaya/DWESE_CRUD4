@@ -23,7 +23,9 @@ if (isset($_GET['action']) AND $_GET['action'] === 'delete') {
     $username = $_GET['username'];
     $user = $userCrud -> userByUsername($username);
     $printDeleteConfirm = $views -> printMessageDeleteUser($user);
+
 }
+
 
 if (isset($_POST['acceptDelete'])) {
     $userCrud -> deleteUser($_POST['usernameForDelete']);

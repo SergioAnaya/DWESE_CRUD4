@@ -88,6 +88,19 @@ class Validations {
         }
     }
 
+    private function isValidUsernameEdit (string $usernameForEdit) {
+        if (empty($_POST['username'])) {
+            $this -> errors['username'] = 'You must enter a username.';
+            $this -> isValid = false;
+        } else {
+            $username = $this -> test_input($_POST['username']);
+            if ($this -> userCrud -> checkUsername($username) === $username AND $username !== $usernameForEdit) {
+                $this -> errors['username'] = 'The user already exists.';
+                $this -> isValid = false;
+            } else $this -> errors['username'] = '';
+        }
+    }
+
     /**
      * TODO: Same as Username
      */
@@ -144,6 +157,14 @@ class Validations {
     function isValidLoan (string $bookId): bool {
         $this -> isValidUsernameLogin();
         $this -> bookAvailability($bookId);
+        return $this -> isValid;
+    }
+
+    function isValidEdit (string $username) {
+        $this -> isValidName();
+        $this -> isValidLastnames();
+        $this -> isValidUsernameEdit($username);
+        $this -> isValidPasswordRegister();
         return $this -> isValid;
     }
 

@@ -38,11 +38,11 @@ class userCrud {
         }
     }
 
-    function updateUser (User $user, string $id) {
+    function updateUser (User $user, string $id, string $codUserType) {
         try {
             $this -> useDatabase();
             $update = $this -> conn -> prepare('UPDATE users SET name = :name,
-            lastnames = :lastnames, username = :username, password = :password WHERE id_user = :id');
+            lastnames = :lastnames, username = :username, password = :password, cod_user_type = :codUserType WHERE id_user = :id');
             $name = $user -> getName();
             $lastnames = $user -> getLastnames();
             $username = $user -> getUsername();
@@ -52,6 +52,7 @@ class userCrud {
             $update -> bindParam(':lastnames', $lastnames);
             $update -> bindParam(':username', $username);
             $update -> bindParam(':password', $password);
+            $update -> bindParam(':codUserType', $codUserType);
             $update -> execute();
         } catch (PDOException $e) {
             echo $update . "<br>" . $e -> getMessage();
@@ -65,7 +66,7 @@ class userCrud {
             $delete -> bindParam(':username', $username);
             $delete -> execute();
         } catch (PDOException $e) {
-            echo $delete . "<br>" . $e -> getMessage();
+            echo $delete . $e -> getMessage();
         }
     }
 
@@ -119,7 +120,7 @@ class userCrud {
                     <td>' . $user -> username .'</td>
                     <td>' . $user -> password .'</td>
                     <td><a href="users.php?username=' . $user -> username . '&action=delete"><i class="material-icons">delete</i></a></td>
-                    <td><a href="index.php?username=' . $user -> username . '&action=edit"><i class="material-icons">edit</i></a></td>
+                    <td><a href="edit.php?username=' . $user -> username . '&action=edit"><i class="material-icons">edit</i></a></td>
                     </tr>';
         }
         for ($i = 0; $i < $max_num_pages; $i++) {
